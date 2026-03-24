@@ -2,6 +2,6 @@
 
 - `widget/chatbot-widget.js` - embeddable widget behavior
 - `widget/chatbot-widget.css` - widget styling
-- `test-page/index.html` - standalone non-Shopify test harness
+- `test-page/index.html` - standalone non-Shopify test harness (optional)
 
 Widget stores chat history in `sessionStorage` and sends full history to `/chat`.

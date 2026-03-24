@@ -16,7 +16,7 @@ Simple, production-minded Shopify chatbot MVP with:
 - `backend/app/services` - JSON knowledge + placeholders for Shopify/custom API
 - `backend/app/chains` - LangChain orchestration
 - `frontend/widget` - embeddable widget JS/CSS
-- `frontend/test-page` - standalone local test page
+- `frontend/test-page` - standalone test page
 - `docs/shopify-embed-snippet.liquid` - Shopify embed example
 - `docs/nginx.conf.example` - production reverse proxy example
 
@@ -41,34 +41,10 @@ Response:
 }
 ```
 
-## Local development
-
-### 1) Backend
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-### 2) Frontend test page
-
-You can open the test page in either of these ways:
-- From FastAPI (after starting backend): `http://127.0.0.1:8000/frontend/test-page/index.html`
-- Or by serving repository root with a static server: `frontend/test-page/index.html`
-
-Static server example:
-```bash
-python -m http.server 5500
-# then open http://127.0.0.1:5500/frontend/test-page/index.html
-```
-
 ## Production notes
 
-- Run FastAPI app with process manager (systemd/supervisor).
-- Put Nginx in front using `docs/nginx.conf.example`.
+- Deploy FastAPI app to Vercel using `api/main.py` as the entrypoint.
+- Configure runtime environment variables from `.env.example`.
 - Upload widget JS/CSS to Shopify theme assets and include snippet from `docs/shopify-embed-snippet.liquid`.
 
 ## Extendability

@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from backend.app.chains.chat_chain import ChatChain, collect_sources
 from backend.app.config.settings import get_settings
@@ -23,6 +26,12 @@ knowledge_service = JsonKnowledgeService('backend/app/data/knowledge.json')
 shopify_service = ShopifyLookupService()
 custom_api_service = CustomApiService()
 
+
+
+project_root = Path(__file__).resolve().parents[2]
+frontend_dir = project_root / 'frontend'
+if frontend_dir.exists():
+    app.mount('/frontend', StaticFiles(directory=frontend_dir), name='frontend')
 
 @app.get('/health')
 def health() -> dict:

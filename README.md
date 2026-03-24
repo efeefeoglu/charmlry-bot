@@ -66,7 +66,6 @@ python -m http.server 5500
 
 ## Production notes
 
-- Auto-detection entrypoints are provided at `main.py` and `api/main.py` for hosts that require a top-level FastAPI module.
 - Run FastAPI app with process manager (systemd/supervisor).
 - Put Nginx in front using `docs/nginx.conf.example`.
 - Upload widget JS/CSS to Shopify theme assets and include snippet from `docs/shopify-embed-snippet.liquid`.

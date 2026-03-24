@@ -9,8 +9,6 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
 
     app_name: str = 'Shopify Chatbot MVP'
-    host: str = Field(default='0.0.0.0', alias='HOST')
-    port: int = Field(default=8000, alias='PORT')
     google_api_key: str = Field(default='', alias='GOOGLE_API_KEY')
     gemini_model: str = Field(default='gemini-flash-lite-latest', alias='GEMINI_MODEL')
     cors_origins_raw: str = Field(default='*', alias='CORS_ORIGINS')

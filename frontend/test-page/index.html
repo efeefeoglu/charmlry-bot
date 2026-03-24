@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Chatbot Widget Test Page</title>
+    <link rel="stylesheet" href="../widget/chatbot-widget.css" />
+    <script>
+      window.SHOPIFY_CHATBOT_BACKEND_URL = 'http://localhost:8000';
+    </script>
+  </head>
+  <body>
+    <main style="max-width: 700px; margin: 40px auto; font-family: Arial, sans-serif">
+      <h1>Standalone Widget Test</h1>
+      <p>
+        This page simulates usage outside Shopify and is useful during development.
+      </p>
+      <p>
+        Open the chat button in the bottom-right corner to test the end-to-end flow.
+      </p>
+    </main>
+
+    <script src="../widget/chatbot-widget.js"></script>
+  </body>
+</html>

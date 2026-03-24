@@ -1,0 +1,11 @@
+{%- comment -%}
+Add this snippet to your Shopify theme (for example in theme.liquid before </body>):
+1) Upload chatbot-widget.css and chatbot-widget.js to Assets.
+2) Set backend URL in script variable.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ 'chatbot-widget.css' | asset_url }}">
+<script>
+  window.SHOPIFY_CHATBOT_BACKEND_URL = 'https://chat-api.yourdomain.com';
+</script>
+<script src="{{ 'chatbot-widget.js' | asset_url }}" defer></script>
